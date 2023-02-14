@@ -1,0 +1,24 @@
+[package]
+name = "circuit"
+version = "0.1.0"
+authors = ["pouyad"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[[bin]]
+name = "circuit"
+doc = false
+
+[dependencies]
+anyhow = "1.0.42"
+bits = { path = "../../bits/bits" }
+bits_derive = { path = "../../bits/bits_derive" }
+bitvec = "1"
+env_logger = "0.8.4"
+log = "0.4.14"
+petgraph = "0.6"
+platform = { path = "../../platform" }
+rand = "0.8"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0.72"
+waves = { path = "../../waves" }

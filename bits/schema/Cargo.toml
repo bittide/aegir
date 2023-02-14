@@ -1,0 +1,11 @@
+[package]
+name = "schema"
+version = "0.1.0"
+edition = "2018"
+[dependencies]
+schema_derive = { path = "../schema_derive" }
+# These should be dev-dependencies but can't because of
+# https://github.com/rust-lang/cargo/issues/1474
+# [dev-dependencies]
+bincode = "1.2"
+serde = { version = "1.0", features = ["derive"] }

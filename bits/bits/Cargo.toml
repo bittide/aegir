@@ -1,0 +1,15 @@
+[package]
+name = "bits"
+version = "0.1.0"
+publish = false
+edition = "2018"
+
+[dependencies]
+schema = { path = "../schema" }
+bits_derive = { path = "../bits_derive" }
+bitvec = "1"
+rand_core = "0.6.2"
+rand_xoshiro = "0.6.0"
+serde = { version = "1.0", features = ["rc", "derive"] }
+serde_derive = "1.0"
+smart-default = "0.6.0"

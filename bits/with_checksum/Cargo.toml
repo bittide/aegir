@@ -1,0 +1,13 @@
+[package]
+name = "with_checksum"
+version = "0.1.0"
+authors = ["chrispearce"]
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+anyhow = "1.0.42"
+bits = { path = "../bits" }
+bits_derive = { path = "../bits_derive" }
+adler32 = "1.2.0"

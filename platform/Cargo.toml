@@ -1,0 +1,43 @@
+[package]
+name = "platform"
+version = "0.5.0"
+authors = ["tammo", "cascaval"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[features]
+# Trace the contents of IO memories in gather/scatter units while logging.
+trace-io-memory-contents = []
+trace-echo-vcd-signal-changes = []  # This is for tracing the VCD implementation during logging, not for enabling VCD dumps.
+
+[dependencies]
+anyhow = "1.0.42"
+bits = { path = "../bits/bits" }
+bits_derive = {path = "../bits/bits_derive"}
+bitvec = "1"
+itertools = "0.10.1"
+log = "0.4.14"
+num = "0.4.0"
+petgraph = "0.6"
+rand = "0.8"
+rand_core = "0.6.2"
+rand_xoshiro = "0.6.0"
+serde = { version = "1.0", features = ["derive"] }
+serde_yaml = "0.8.21"
+# serial_test = "0.5"
+vcd = "0.6.1"
+chrono = "0.4"
+waves = {path = "../waves"}
+
+[dev-dependencies]
+bencher = "0.1.5"
+env_logger = "0.8.4"
+
+[[bench]]
+name="comm"
+harness=false
+
+[[bench]]
+name="forward"
+harness=false

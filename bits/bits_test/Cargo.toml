@@ -1,0 +1,12 @@
+[package]
+name = "bits_test"
+version = "0.1.0"
+publish = false
+edition = "2018"
+
+[dependencies]
+bits = { path = "../bits" }
+bits_derive = { path = "../bits_derive" }
+schema = { path = "../schema" }
+bitvec = "1"
+serde = { version = "1.0" }

@@ -1,0 +1,38 @@
+# NOTE: compilation with cargo inside a CitC client can be facilitated by
+# creating a .cargo/config.toml file in this directory with the following
+# (or similar) content:
+# -----
+# [build]
+# target-dir = "/tmp/aegir"  # path of where to place all generated artifacts
+# -----
+
+[workspace]
+members = [
+    "apps/circuit",
+    "apps/exchange",
+    "apps/kvstore",
+    "apps/life",
+    "apps/nn_classifier",
+    "apps/packetnet",
+    "apps/simple",
+    "bits/bits_test",
+    "bits/with_checksum",
+    "tests/failures",
+    "tests/multifreq",
+    "tests/one_to_one_network",
+    "tests/virtual_links",
+    "tests/multiapps",
+    "platform",
+    "waves",
+]
+
+[profile.test]
+opt-level = 3
+
+[profile.release]
+debug = true
+lto = "thin"
+
+[profile.bench]
+debug = true
+lto = "thin"
