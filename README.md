@@ -1,5 +1,7 @@
 # ægir
 
+![](https://github.com/bittide/aegir/actions/workflows/rust.yml/badge.svg "CI passing badge")
+
 ægir (Old Norse 'sea') is a multi-level bittide functional simulator.
 
 ægir functionality includes:
