@@ -45,7 +45,7 @@ pub fn line<const BUFFERING: Buffering>(
     let mut prev_id = hw_spec
         .add_node(ComputeNode::from_config(format!("node_0",).as_str(), &end_node_config).into());
 
-    for n in 1..num_nodes-1 {
+    for n in 1..num_nodes - 1 {
         let node_id = hw_spec.add_node(
             ComputeNode::from_config(format!("node_{}", n).as_str(), &node_config).into(),
         );
@@ -85,7 +85,7 @@ mod topology_tests {
         assert_eq!(topo.iter_nodes().count(), num_nodes);
 
         assert_eq!(topo.get_node_inout_count(node_index(0)), (1, 1));
-        (1..num_nodes-1).for_each(|n| {
+        (1..num_nodes - 1).for_each(|n| {
             assert_eq!(topo.get_node_inout_count(node_index(n)), (2, 2));
         });
         assert_eq!(topo.get_node_inout_count(node_index(num_nodes - 1)), (1, 1));
