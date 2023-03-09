@@ -16,12 +16,22 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
+    - name: Restore from cache
+      uses: actions/cache@v3
+      with:
+        # Cache cargo package dir, build dir, and mnist data set used by tests.
+        path: |
+          ~/.cargo
+          ./target
+          ./apps/nn_classifier/data_sets/
+        key: ${{ runner.os }}-build-${{ hashFiles('Cargo.lock') }}
     - name: Build
       run: cargo build --verbose
     - name: Check formatted
       run: cargo fmt --check --verbose
     - name: Run tests
+      # Note: the mnist_download script won't re-download if dir containing
+      # datasets is already there, i.e. we restored from cache above.
       run: |
-        pwd
         ./apps/nn_classifier/scripts/mnist_download.sh
         cargo test --verbose
