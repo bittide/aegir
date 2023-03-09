@@ -21,4 +21,7 @@ jobs:
     - name: Check formatted
       run: cargo fmt --check --verbose
     - name: Run tests
-      run: cargo test --verbose
+      run: |
+        pwd
+        ./apps/nn_classifier/scripts/mnist_download.sh
+        cargo test --verbose
