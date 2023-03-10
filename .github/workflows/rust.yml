@@ -25,8 +25,10 @@ jobs:
           ./target
           ./apps/nn_classifier/data_sets/
         key: ${{ runner.os }}-build-${{ hashFiles('Cargo.lock') }}
-    - name: Build
+    - name: Build lib/apps
       run: cargo build --verbose
+    - name: Build benches
+      run: cargo build --verbose --benches
     - name: Check formatted
       run: cargo fmt --check --verbose
     - name: Run tests
