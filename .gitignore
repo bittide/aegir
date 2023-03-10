@@ -15,3 +15,5 @@ target/
 # Per-user VSCode settings.
 .vscode
 
+apps/exchange/*.log
+apps/nn_classifier/data_sets
